@@ -1,9 +1,6 @@
 name: ASP.NET v6 CI
 
-on:
-  push:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
   build:
