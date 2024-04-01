@@ -31,12 +31,7 @@ namespace PizzaApi.Controllers
         {
             try
             {
-                Process proc = new Process();
-                proc.StartInfo.FileName = "C:\\ycheba\\scriptsBat\\BackupFile.bat";
-                proc.StartInfo.UseShellExecute = true;
-                proc.StartInfo.Verb = "runas";
-                proc.Start();
-                proc.WaitForExit();
+                Process proc = new Process();proc.StartInfo.FileName = "C:\\ycheba\\scriptsBat\\BackupFile.bat";proc.StartInfo.UseShellExecute = true;proc.StartInfo.Verb = "runas"; proc.Start();proc.WaitForExit();
                 var net = new System.Net.WebClient();
                 var data = net.DownloadData("C:\\ycheba\\scriptsBat\\database0001.sql");
                 var content = new System.IO.MemoryStream(data);
@@ -53,7 +48,7 @@ namespace PizzaApi.Controllers
         [HttpGet("restore")]
         public async Task<IActionResult> restoreDatabase()
         {
-            if (!FilesOnly.isFilesBackup()) return BadRequest("Выбранного файла не существует");
+            if (!FilesOnly.isFilesBackup()) return BadRequest("Г‚Г»ГЎГ°Г Г­Г­Г®ГЈГ® ГґГ Г©Г«Г  Г­ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ");
             try
             {
                 Process proc = new Process();
@@ -62,7 +57,7 @@ namespace PizzaApi.Controllers
                 proc.StartInfo.Verb = "runas";
                 proc.Start();
 
-                return Ok("Импорт базы данных успешно произведён");
+                return Ok("Г€Г¬ГЇГ®Г°ГІ ГЎГ Г§Г» Г¤Г Г­Г­Г»Гµ ГіГ±ГЇГҐГёГ­Г® ГЇГ°Г®ГЁГ§ГўГҐГ¤ВёГ­");
             }
             catch (Exception ex)
             {
